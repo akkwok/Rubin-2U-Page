@@ -5578,6 +5578,10 @@ animation: inherit !important;
 }
 
 #BMC-width-full .showType {
+    display: none;
+}
+
+#BMC-width-full #BMC-cooling .showType {
     display: block;
     position: relative;
 }
