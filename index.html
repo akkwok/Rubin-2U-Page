@@ -513,11 +513,12 @@
                         </div>
                     </div>
                     <div class="pod_area">
-                        <div class="pod-spec-table" role="table" aria-labelledby="pod-spec-title">
-                            <!-- 表格大標題：採用 ARIA 1.2 合法的 role="caption" 並以 aria-labelledby 關聯表格，通過 Lighthouse 檢查且維持原有 CSS 結構 -->
-                            <div id="pod-spec-title" class="pod-spec-caption" role="caption">ASUS AI POD - 576p GPUs</div>
+                        <div class="pod-spec-table">
+                            <!-- 移除 role="caption"，改由下方 role="table" 透過 aria-labelledby 關聯標題 -->
+                            <div id="pod-spec-title" class="pod-spec-caption">ASUS AI POD - 576p GPUs</div>
 
-                            <div class="pod-spec-tbody" role="rowgroup">
+                            <!-- 將 role="table" 與 aria-labelledby 移至此層，使其直屬子元素皆為 role="row" -->
+                            <div class="pod-spec-tbody" role="table" aria-labelledby="pod-spec-title">
 
                                 <!-- Row 1 -->
                                 <div class="pod-spec-row" role="row">
@@ -585,7 +586,7 @@
                                         <div class="pod-spec-label" role="rowheader">1 SU</div>
                                         <div class="pod-spec-value" role="cell">8 Rack / 72 Compute Nodes</div>
                                     </div>
-                                    <!-- 右側空欄保留對齊網格，加上 role="presentation" 與 aria-hidden 避免輔助工具報讀 -->
+                                    <!-- 右側空欄保留對齊網格，加上 aria-hidden 避免輔助工具報讀 -->
                                     <div class="pod-spec-group group-right" role="presentation" aria-hidden="true">
                                         <div class="pod-spec-label pod-spec-empty"></div>
                                         <div class="pod-spec-value"></div>
